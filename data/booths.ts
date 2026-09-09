@@ -1,6 +1,7 @@
 export type Booth = {
   id: string;
   name: string;
+  slogan?: string;
   side: "left" | "right";
   area: {
     left: number;
