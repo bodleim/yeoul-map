@@ -22,7 +22,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booth-name"
-        className="flex h-[596px] w-full max-w-[345px] scale-90 flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
+        className="flex h-[596px] w-full max-w-[345px] flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
       >
           <header className="flex h-[91px] w-full shrink-0 items-start gap-3 overflow-hidden">
             <div className="flex min-w-0 flex-1 flex-col items-start gap-1.5 overflow-hidden">
@@ -50,7 +50,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
           </header>
 
           {menuImage ? (
-            <div className="h-[381px] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
+            <div className="h-[449px] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
               <Image
                 src={menuImage}
                 alt={`${booth.name} 메뉴판`}
@@ -59,7 +59,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
               />
             </div>
           ) : (
-            <div className="flex h-[381px] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
+            <div className="flex h-[449px] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
               {menus.length === 0 ? (
                 <p className="[font-family:var(--font-asta-sans)] text-center text-sm leading-[1.4] font-medium text-[#3d2e1f]">
                   메뉴 준비 중입니다.
@@ -77,12 +77,6 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
             </div>
           )}
 
-          <Link
-            href="/"
-            className="flex h-[52px] w-full shrink-0 items-center justify-center rounded-full bg-[#d94a3d] [font-family:var(--font-asta-sans)] text-center text-base leading-[1.4] font-bold text-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#3d2e1f]"
-          >
-            지도로 돌아가기
-          </Link>
       </section>
     </div>
   );
