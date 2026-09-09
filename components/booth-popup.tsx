@@ -50,7 +50,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
           </header>
 
           {menuImage ? (
-            <div className="h-[449px] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
+            <div className="aspect-[4/5] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
               <Image
                 src={menuImage}
                 alt={`${booth.name} 메뉴판`}
@@ -59,7 +59,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
               />
             </div>
           ) : (
-            <div className="flex h-[449px] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
+            <div className="flex aspect-[4/5] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
               {menus.length === 0 ? (
                 <p className="[font-family:var(--font-asta-sans)] text-center text-sm leading-[1.4] font-medium text-[#3d2e1f]">
                   메뉴 준비 중입니다.
