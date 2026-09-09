@@ -12,7 +12,10 @@ export function BoothMap({ interactive = true }: BoothMapProps) {
     <main className="min-h-svh bg-[#f4e9c8]">
       <h1 className="sr-only">여울제 부스 지도</h1>
 
-      <section className="relative mx-auto w-full sm:max-w-[393px]" aria-label="여울제 지도">
+      <section
+        className="festival-map-frame relative mx-auto"
+        aria-label="여울제 지도"
+      >
         <Image
           src={festivalMap}
           alt="여울제 행사장과 1번부터 16번까지의 부스 위치를 표시한 지도"
