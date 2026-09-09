@@ -10,3 +10,36 @@ body {
   min-height: 100%;
   background: #fff;
 }
+
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+img {
+  -webkit-user-drag: none;
+}
+
+@keyframes booth-marquee-left {
+  0%,
+  15% {
+    transform: translateX(0);
+  }
+
+  85%,
+  100% {
+    transform: translateX(var(--marquee-offset));
+  }
+}
+
+.booth-marquee-text {
+  animation: booth-marquee-left var(--marquee-duration) ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .booth-marquee-text {
+    animation: none;
+  }
+}

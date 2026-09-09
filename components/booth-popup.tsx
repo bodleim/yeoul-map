@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { astaSans, gmarketSans } from "@/app/fonts";
+import { OverflowMarquee } from "@/components/overflow-marquee";
 import { getBoothMenuImage } from "@/data/booth-menu-images";
 import type { Booth } from "@/data/booths";
 import type { MenuItem } from "@/data/menus";
@@ -16,70 +17,77 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
 
   return (
     <div
-      className={`${gmarketSans.variable} ${astaSans.variable} fixed inset-0 z-50 grid place-items-center overflow-y-auto bg-[rgba(42,33,24,0.45)] p-6`}
+      className={`${gmarketSans.variable} ${astaSans.variable} fixed inset-0 z-50 flex items-start justify-center overflow-y-auto overscroll-contain bg-[rgba(42,33,24,0.45)] p-6`}
     >
       <section
         role="dialog"
         aria-modal="true"
         aria-labelledby="booth-name"
-        className="flex h-[596px] w-full max-w-[345px] flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
+        className="my-auto flex h-[596px] min-h-[596px] w-full max-w-[345px] flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
       >
-          <header className="flex h-[91px] w-full shrink-0 items-start gap-3 overflow-hidden">
-            <div className="flex min-w-0 flex-1 flex-col items-start gap-1.5 overflow-hidden">
-              <span className="inline-flex shrink-0 rounded-full bg-[#d94a3d] px-2.5 py-[5px] [font-family:var(--font-gmarket-sans)] text-xs leading-[1.4] font-bold whitespace-nowrap text-white">
-                {boothNumber}번 부스
-              </span>
-              <h1
-                id="booth-name"
-                className="w-full truncate [font-family:var(--font-gmarket-sans)] text-2xl leading-[1.4] font-medium text-[#3d2e1f]"
-              >
-                {booth.name}
-              </h1>
-              <p className="w-full truncate [font-family:var(--font-gmarket-sans)] text-[13px] leading-[1.4] font-light text-[#8a7a63]">
-                {booth.slogan ?? "슬로건 준비 중입니다."}
-              </p>
-            </div>
-
-          </header>
-
-          {menuImage ? (
-            <div className="aspect-[4/5] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
-              <Image
-                src={menuImage}
-                alt={`${booth.name} 메뉴판`}
-                className="h-full w-full object-contain"
-                sizes="305px"
-                unoptimized
-                loading="eager"
-                fetchPriority="high"
-                placeholder="blur"
+        <header className="flex h-[91px] w-full shrink-0 items-start gap-3 overflow-hidden">
+          <div className="flex min-w-0 flex-1 flex-col items-start gap-1.5 overflow-hidden">
+            <span className="inline-flex shrink-0 rounded-full bg-[#d94a3d] px-2.5 py-[5px] [font-family:var(--font-gmarket-sans)] text-xs leading-[1.4] font-bold whitespace-nowrap text-white">
+              {boothNumber}번 부스
+            </span>
+            <h1
+              id="booth-name"
+              className="w-full overflow-hidden [font-family:var(--font-gmarket-sans)] text-2xl leading-[1.4] font-medium text-[#3d2e1f]"
+            >
+              <OverflowMarquee text={booth.name} />
+            </h1>
+            <p className="w-full overflow-hidden [font-family:var(--font-gmarket-sans)] text-[15px] leading-[1.4] font-light text-[#8a7a63]">
+              <OverflowMarquee
+                text={booth.slogan ?? "슬로건 준비 중입니다."}
               />
-            </div>
-          ) : (
-            <div className="flex aspect-[4/5] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
-              {menus.length === 0 ? (
-                <p className="[font-family:var(--font-asta-sans)] text-center text-sm leading-[1.4] font-medium text-[#3d2e1f]">
-                  메뉴 준비 중입니다.
-                </p>
-              ) : (
-                <ul className="flex w-full flex-col gap-3 p-5 [font-family:var(--font-asta-sans)] text-sm text-[#3d2e1f]">
-                  {menus.map((menu, index) => (
-                    <li key={`${menu.name}-${index}`} className="flex items-start justify-between gap-4">
-                      <span className="min-w-0 break-words">{menu.name}</span>
-                      <span className="shrink-0 whitespace-nowrap">{menu.price}</span>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          )}
+            </p>
+          </div>
+        </header>
 
-          <Link
-            href="/"
-            className="flex h-[52px] w-full shrink-0 items-center justify-center rounded-full bg-[#d94a3d] [font-family:var(--font-asta-sans)] text-center text-base leading-[1.4] font-bold text-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#3d2e1f]"
-          >
-            지도로 돌아가기
-          </Link>
+        {menuImage ? (
+          <div className="relative aspect-[4/5] w-full shrink-0 overflow-hidden rounded-2xl bg-[#f7f1e1]">
+            <Image
+              src={menuImage}
+              alt={`${booth.name} 메뉴판`}
+              fill
+              className="object-contain"
+              sizes="305px"
+              unoptimized
+              loading="eager"
+              fetchPriority="high"
+              placeholder="blur"
+            />
+          </div>
+        ) : (
+          <div className="flex aspect-[4/5] w-full shrink-0 flex-col items-center justify-center overflow-y-auto rounded-2xl border-[1.5px] border-dashed border-[#cbb894] bg-[#f7f1e1]">
+            {menus.length === 0 ? (
+              <p className="[font-family:var(--font-asta-sans)] text-center text-sm leading-[1.4] font-medium text-[#3d2e1f]">
+                메뉴 준비 중입니다.
+              </p>
+            ) : (
+              <ul className="flex w-full flex-col gap-3 p-5 [font-family:var(--font-asta-sans)] text-sm text-[#3d2e1f]">
+                {menus.map((menu, index) => (
+                  <li
+                    key={`${menu.name}-${index}`}
+                    className="flex items-start justify-between gap-4"
+                  >
+                    <span className="min-w-0 break-words">{menu.name}</span>
+                    <span className="shrink-0 whitespace-nowrap">
+                      {menu.price}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
+
+        <Link
+          href="/"
+          className="flex h-[52px] w-full shrink-0 items-center justify-center rounded-full bg-[#d94a3d] [font-family:var(--font-asta-sans)] text-center text-base leading-[1.4] font-bold text-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#3d2e1f]"
+        >
+          지도로 돌아가기
+        </Link>
       </section>
     </div>
   );
