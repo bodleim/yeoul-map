@@ -22,7 +22,7 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="booth-name"
-        className="flex h-[596px] w-full max-w-[345px] flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
+        className="flex h-[596px] w-full max-w-[345px] scale-90 flex-col gap-4 overflow-hidden rounded-[28px] border-2 border-[#e5d8b8] bg-[#fffcf4] p-[18px] shadow-[0_10px_28px_rgba(42,33,24,0.28)]"
       >
           <header className="flex h-[91px] w-full shrink-0 items-start gap-3 overflow-hidden">
             <div className="flex min-w-0 flex-1 flex-col items-start gap-1.5 overflow-hidden">
