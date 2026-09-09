@@ -21,16 +21,6 @@ img {
   -webkit-user-drag: none;
 }
 
-.festival-map-frame {
-  width: min(100%, 393px);
-}
-
-@supports (height: 100svh) {
-  .festival-map-frame {
-    width: min(100%, 46.131svh, 393px);
-  }
-}
-
 @keyframes booth-marquee-left {
   0%,
   15% {
