@@ -1,14 +1,14 @@
 import type { StaticImageData } from "next/image";
-import boothMenu2 from "@/img/booth-menu/2.png";
-import boothMenu3 from "@/img/booth-menu/3.jpeg";
-import boothMenu4 from "@/img/booth-menu/4.png";
-import boothMenu5 from "@/img/booth-menu/5.jpeg";
-import boothMenu7 from "@/img/booth-menu/7.png";
-import boothMenu10 from "@/img/booth-menu/10.png";
-import boothMenu11 from "@/img/booth-menu/11.jpeg";
-import boothMenu12 from "@/img/booth-menu/12.png";
-import boothMenu13 from "@/img/booth-menu/13.png";
-import boothMenu14 from "@/img/booth-menu/14.png";
+import boothMenu2 from "@/img/menu-delivery/2.webp";
+import boothMenu3 from "@/img/menu-delivery/3.webp";
+import boothMenu4 from "@/img/menu-delivery/4.webp";
+import boothMenu5 from "@/img/menu-delivery/5.webp";
+import boothMenu7 from "@/img/menu-delivery/7.webp";
+import boothMenu10 from "@/img/menu-delivery/10.webp";
+import boothMenu11 from "@/img/menu-delivery/11.webp";
+import boothMenu12 from "@/img/menu-delivery/12.webp";
+import boothMenu13 from "@/img/menu-delivery/13.webp";
+import boothMenu14 from "@/img/menu-delivery/14.webp";
 
 const boothMenuImages: Readonly<Partial<Record<string, StaticImageData>>> = {
   "2": boothMenu2,

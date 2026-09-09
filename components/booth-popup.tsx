@@ -56,6 +56,10 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
                 alt={`${booth.name} 메뉴판`}
                 className="h-full w-full object-contain"
                 sizes="305px"
+                unoptimized
+                loading="eager"
+                fetchPriority="high"
+                placeholder="blur"
               />
             </div>
           ) : (
