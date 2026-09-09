@@ -23,7 +23,7 @@ const boothDetails: Readonly<Partial<Record<string, BoothDetails>>> = {
   "4": { name: "포켓몬꼬치", slogan: "너로 정했다, 여울제는 너다 피카츄 돈가스!" },
   "5": {
     name: "감자에 싹이나서 이파리에 감자",
-    slogan: "뜨거운 여름, 뜨거운 감자, 뜨거운 불닭으로 이열치열!",
+    slogan: "뜨거운 여름, 뜨거운 감자",
   },
   "6": { name: "지존 어쩌구", slogan: emptySlogan },
   "7": { name: "간바레 유부상", slogan: "오늘도 간바레, 내일도 がんばれ~" },
