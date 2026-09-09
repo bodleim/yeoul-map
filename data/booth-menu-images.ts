@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import boothMenu2 from "@/img/booth-menu/2.png";
 import boothMenu3 from "@/img/booth-menu/3.jpeg";
 import boothMenu4 from "@/img/booth-menu/4.png";
 import boothMenu5 from "@/img/booth-menu/5.jpeg";
@@ -10,6 +11,7 @@ import boothMenu13 from "@/img/booth-menu/13.png";
 import boothMenu14 from "@/img/booth-menu/14.png";
 
 const boothMenuImages: Readonly<Partial<Record<string, StaticImageData>>> = {
+  "2": boothMenu2,
   "3": boothMenu3,
   "4": boothMenu4,
   "5": boothMenu5,
