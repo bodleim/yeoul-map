@@ -40,13 +40,6 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
               </p>
             </div>
 
-            <Link
-              href="/"
-              aria-label="팝업 닫고 지도로 돌아가기"
-              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#f3ead3] [font-family:var(--font-asta-sans)] text-base leading-[1.4] font-medium text-[#3d2e1f] focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#d94a3d]"
-            >
-              ✕
-            </Link>
           </header>
 
           {menuImage ? (
@@ -81,6 +74,12 @@ export function BoothPopup({ booth, menus }: BoothPopupProps) {
             </div>
           )}
 
+          <Link
+            href="/"
+            className="flex h-[52px] w-full shrink-0 items-center justify-center rounded-full bg-[#d94a3d] [font-family:var(--font-asta-sans)] text-center text-base leading-[1.4] font-bold text-white focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-[#3d2e1f]"
+          >
+            지도로 돌아가기
+          </Link>
       </section>
     </div>
   );
